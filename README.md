@@ -20,7 +20,7 @@ Standalone: standalone: true es el estándar por defecto.
 
 # 3. Matriz de Identidad Visual (Iconografía Declarativa):
 Cada propiedad o bloque debe llevar su emoji identificador. 
-Se aplica alineación de columna estricta para el signo =.
+Se aplica alineación de columna estricta para el signo "=".
 
 
 💎 Matriz de Identidad Visual L10 (Actualizada)
