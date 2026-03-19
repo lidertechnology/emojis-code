@@ -1,206 +1,52 @@
-# 🎨 Angular L10 — Visual Code Conventions
+💎 Protocolo de Formato y Arquitectura Visual L10
+1. Bloque de Importaciones (Imports)
+Agrupación: Separar por bloques: 1. Angular, 2. Material Modules, 3. Recursos propios (Interfaces, Servicios, Constantes).
 
-> **Sistema de iconografía semántica** para comentarios de código en proyectos Angular.  
-> Cada símbolo comunica la **intención** del elemento antes de leerlo.
+Alineación de Columna: Los nombres de los elementos importados deben estar alineados verticalmente, al igual que las rutas from.
 
----
+Imports de Componente: Dentro del decorador @Component, la propiedad imports: [ ... ] debe escribirse en una sola línea para mantener la brevedad visual del decorador.
 
-## ¿Por qué usar esta convención?
+2. Decorador @Component
+Alineación: Alinear los dos puntos : de todas las propiedades (selector, templateUrl, etc.).
 
-En equipos grandes o proyectos complejos, el tiempo de comprensión del código es crítico. Esta iconografía permite:
+Performance: Usar changeDetection: ChangeDetectionStrategy.OnPush siempre que sea posible.
 
-- **Escaneo visual instantáneo** — identifica el tipo de elemento en un vistazo
-- **Semántica uniforme** — todo el equipo habla el mismo "idioma visual"
-- **Documentación implícita** — el emoji es el comentario más corto posible
-- **Alineación izquierda** — siempre antes de `const`, `readonly` o definiciones
+Standalone: standalone: true es el estándar por defecto.
 
----
+3. Matriz de Identidad Visual (Iconografía Declarativa)
+Cada propiedad o bloque debe llevar su emoji identificador. Se aplica alineación de columna estricta para el signo =.
 
-## 📐 Formato de uso
 
-```ts
-/* 📡 */ const contador = signal(0);
-/* 💻 */ readonly total = computed(() => this.contador() * 2);
-/* 🚀 */ readonly logger = effect(() => console.log(this.contador()));
-```
+💎 Matriz de Identidad Visual L10 (Actualizada)
 
-El comentario va en la **misma línea**, pegado a la izquierda, antes de la declaración.
+# 1. Infraestructura y Dependencias:
+/* 💉 */ Inyección: Uso exclusivo de inject() para servicios, tokens o datos.
+/* 🔒 */ Constantes: Reservado estrictamente para constantes inmutables o de solo lectura.
+/* 🚨 */ Navegación: IDs de ruta, ActivatedRoute, Router y estados de modo (isEditMode).
 
----
+2. Reactividad Moderna (Signals)
+/* 💡 */ Signal: Estado mutable de entrada o señal básica (signal).
+/* 🖥️ */ Computed: Señales de valores derivados o calculados (computed).
+/* ✨ */ Effect: Efectos secundarios reactivos (effect).
+/* 🪃 */ Model: Comunicación bidireccional moderna (model).
 
-## 1 · Reactividad y Estado · Signals
+# 3. Comunicación y DOM:
+/* ↘️ */ Input: Entrada de datos desde un componente padre (@Input).
+/* ↗️ */ Output: Salida de eventos hacia componentes superiores (@Output).
+/* 👀 */ ViewChild: Referencias a elementos del DOM o componentes hijos (@ViewChild).
+/* 🏷️ */ Elemento: Referencias directas a ElementRef o nodos nativos.
 
-| Emoji | Nombre | Uso |
-|-------|--------|-----|
-| `/* ✅ */` | **Simple Signal** | Booleanos y flags de estado |
-| `/* 📡 */` | **Writable Signal** | Estado general de escritura |
-| `/* 🛡️ */` | **Read-only Signal** | Protegido con `.asReadonly()` |
-| `/* 💻 */` | **Computed** | Estado derivado, calculado |
-| `/* 🚀 */` | **Effect** | Lanzadores y efectos secundarios |
+# 4. Arquitectura de Formularios:
 
-```ts
-/* ✅ */ const isVisible = signal(false);
-/* 📡 */ const userName   = signal('');
-/* 🛡️ */ readonly count  = this._count.asReadonly();
-/* 💻 */ readonly label   = computed(() => `Hola, ${this.userName()}`);
-/* 🚀 */ readonly tracker = effect(() => analytics.track(this.count()));
-```
+/* 📝 */ Formulario: Declaración y estructura de la variable formGroup.
+/* ✅ */ Validador: Reglas de validación dentro de los controles (Validators).
 
----
+# 5. Flujos Asíncronos (RxJS):
+/* 👁️ */ Observable: Flujos de datos asíncronos (Observable, Subject).
+/* 📌 */ Suscripción: Anclas de Subscription que requieren limpieza manual.
 
-## 2 · Comunicación de Componentes
+# 6. Estructura de Métodos:
+/* 🚧 */ Constructor: Bloque inicial de construcción (zona de cimientos).
+/* 🅰️ */ Angular Nativo: Hooks de ciclo de vida (ngOnInit, ngOnDestroy, etc.).
+/* 🏛️ */ Método L10: Lógica de negocio, funciones privadas y procesos propios.
 
-| Emoji | Nombre | Uso |
-|-------|--------|-----|
-| `/* ⤵️ */` | **Input** | Entrada de datos · *Data Down* |
-| `/* ⤴️ */` | **Output** | Salida de eventos · *Event Up* |
-| `/* ↔️ */` | **Model** | Binding bidireccional |
-
-```ts
-/* ⤵️ */ readonly title   = input.required<string>();
-/* ⤴️ */ readonly clicked = output<void>();
-/* ↔️ */ readonly value   = model('');
-```
-
----
-
-## 3 · Flujos Asíncronos · RxJS
-
-| Emoji | Nombre | Uso |
-|-------|--------|-----|
-| `/* 👁️ */` | **Stream / Observable** | Observables puros de RxJS |
-
-```ts
-/* 👁️ */ readonly data$ = this.http.get<Item[]>('/api/items');
-/* 👁️ */ readonly route$ = this.router.events.pipe(
-            filter(e => e instanceof NavigationEnd)
-          );
-```
-
----
-
-## 4 · Infraestructura y Lógica
-
-| Emoji | Nombre | Uso |
-|-------|--------|-----|
-| `/* 💉 */` | **Inject** | Inyección de dependencias |
-| `/* 🔘 */` | **Const** | Constantes inmutables |
-| `/* 📝 */` | **Forms** | `FormGroup` / formularios reactivos |
-/* `🧭` */ | **Router** | Navegación y rutas |
-
-```ts
-/* 💉 */ private readonly http    = inject(HttpClient);
-/* 💉 */ private readonly router  = inject(Router);
-/* 🔘 */ const MAX_RETRIES        = 3;
-/* 📝 */ readonly form            = new FormGroup({ ... });
-/* 🧭 */ readonly activeRoute     = inject(ActivatedRoute);
-```
-
----
-
-## 5 · Definiciones y Estructura
-
-| Emoji | Nombre | Uso |
-|-------|--------|-----|
-| `/* 🧩 */` | **Interface** | Contratos de datos y modelos |
-| `/* 🔢 */` | **Enum** | Diccionarios numéricos o estáticos |
-| `/* 🏷️ */` | **DOM Reference** | `viewChild` / referencias HTML |
-
-```ts
-/* 🧩 */ interface User {
-  id: number;
-  name: string;
-}
-
-/* 🔢 */ enum Status {
-  Active = 'ACTIVE',
-  Inactive = 'INACTIVE',
-}
-
-/* 🏷️ */ readonly inputRef = viewChild<ElementRef>('myInput');
-```
-
----
-
-## 🗺️ Referencia rápida — Cheat Sheet
-
-```
-SIGNALS & STATE
-  ✅  Simple Signal     →  Booleanos / Flags
-  📡  Writable Signal   →  Estado general
-  🛡️  Read-only Signal  →  asReadonly()
-  💻  Computed          →  Estado derivado
-  🚀  Effect            →  Efectos secundarios
-
-COMPONENT I/O
-  ⤵️  Input             →  Data Down
-  ⤴️  Output            →  Event Up
-  ↔️  Model             →  Two-way binding
-
-ASYNC / RXJS
-  👁️  Observable        →  Streams puros
-
-INFRASTRUCTURE
-  💉  Inject            →  Dependencias
-  🔘  Const             →  Inmutables
-  📝  Forms             →  FormGroup
-  🧭  Router            →  Navegación
-
-STRUCTURE
-  🧩  Interface         →  Contratos
-  🔢  Enum              →  Diccionarios
-  🏷️  DOM Ref           →  viewChild / HTML refs
-```
-
----
-
-## ✅ Ejemplo completo en contexto
-
-```ts
-import { Component, computed, effect, inject, input, output, signal } from '@angular/core';
-import { Router } from '@angular/router';
-
-/* 🧩 */ interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
-
-/* 🔢 */ enum CartStatus {
-  Empty   = 'EMPTY',
-  HasItems = 'HAS_ITEMS',
-}
-
-@Component({ selector: 'app-cart', ... })
-export class CartComponent {
-
-  // — Injecciones —
-  /* 💉 */ private readonly router = inject(Router);
-
-  // — Inputs / Outputs —
-  /* ⤵️ */ readonly products  = input.required<Product[]>();
-  /* ⤴️ */ readonly purchased = output<Product[]>();
-
-  // — Estado interno —
-  /* ✅ */ readonly isOpen    = signal(false);
-  /* 📡 */ readonly selected  = signal<Product[]>([]);
-
-  // — Estado derivado —
-  /* 💻 */ readonly total     = computed(() =>
-    this.selected().reduce((sum, p) => sum + p.price, 0)
-  );
-  /* 💻 */ readonly status    = computed(() =>
-    this.selected().length > 0 ? CartStatus.HasItems : CartStatus.Empty
-  );
-
-  // — Efectos —
-  /* 🚀 */ readonly analytics = effect(() => {
-    console.log('Cart updated:', this.total());
-  });
-}
-```
-
----
-
-*Convención L10 · Angular · Versión 1.0*  
-*Actualiza este documento al evolucionar el sistema de iconografía del equipo.*
