@@ -24,12 +24,12 @@ Cada propiedad o bloque debe llevar su emoji identificador. Se aplica alineació
         /* 🔒 */ Constantes: Reservado estrictamente para constantes inmutables o de solo lectura.
         /* 🚨 */ Navegación: IDs de ruta, ActivatedRoute, Router y estados de modo (isEditMode).
 
-2. Reactividad Moderna (Signals).
+# 2. Reactividad Moderna (Signals).
    
-          /* 💡 */ Signal: Estado mutable de entrada o señal básica (signal).
-          /* 🖥️ */ Computed: Señales de valores derivados o calculados (computed).
-          /* ✨ */ Effect: Efectos secundarios reactivos (effect).
-          /* 🪃 */ Model: Comunicación bidireccional moderna (model).
+        /* 💡 */ Signal: Estado mutable de entrada o señal básica (signal).
+        /* 🖥️ */ Computed: Señales de valores derivados o calculados (computed).
+        /* ✨ */ Effect: Efectos secundarios reactivos (effect).
+        /* 🪃 */ Model: Comunicación bidireccional moderna (model).
 
 # 3. Comunicación y DOM:
         /* ↘️ */ Input: Entrada de datos desde un componente padre (@Input).
