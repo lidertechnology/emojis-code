@@ -12,15 +12,15 @@ Alineación de Columna: Los nombres de los elementos importados deben estar alin
 Imports de Componente: Dentro del decorador @Component, la propiedad imports: [ ... ] debe escribirse en una sola línea para mantener la brevedad visual del decorador.
 
 # 2. Decorador @Component:
-Alineación: Alinear los dos puntos : de todas las propiedades (selector, templateUrl, etc.).
 
-Performance: Usar changeDetection: ChangeDetectionStrategy.OnPush siempre que sea posible.
-
-Standalone: standalone: true es el estándar por defecto.
+          * Alineación: Alinear los dos puntos : de todas las propiedades (selector, templateUrl, etc.).
+          * Performance: Usar changeDetection: ChangeDetectionStrategy.OnPush siempre que sea posible.
+          * Standalone: standalone: true es el estándar por defecto.
 
 # 3. Matriz de Identidad Visual (Iconografía Declarativa):
-Cada propiedad o bloque debe llevar su emoji identificador. 
-Se aplica alineación de columna estricta para el signo "=".
+
+          Cada propiedad o bloque debe llevar su emoji identificador. 
+          Se aplica alineación de columna estricta para el signo "=".
 
 
 💎 Matriz de Identidad Visual L10 (Actualizada)
