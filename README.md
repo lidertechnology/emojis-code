@@ -2,9 +2,10 @@
 
 # 1. Bloque de Importaciones (Imports):
 Agrupación: Separar por bloques: 
-      *  1. Angular. 
-      *  2. Material Modules. 
-      *  3. Recursos propios (Interfaces, Servicios, Constantes).
+          
+     * 1. Angular. 
+     * 2. Material Modules. 
+     * 3. Recursos propios (Interfaces, Servicios, Constantes).
 
 Alineación de Columna: Los nombres de los elementos importados deben estar alineados verticalmente, al igual que las rutas from.
 
