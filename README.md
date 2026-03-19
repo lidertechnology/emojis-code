@@ -20,9 +20,9 @@ Cada propiedad o bloque debe llevar su emoji identificador. Se aplica alineació
 💎 Matriz de Identidad Visual L10 (Actualizada)
 
 # 1. Infraestructura y Dependencias:
-    /* 💉 */ Inyección: Uso exclusivo de inject() para servicios, tokens o datos.
-    /* 🔒 */ Constantes: Reservado estrictamente para constantes inmutables o de solo lectura.
-    /* 🚨 */ Navegación: IDs de ruta, ActivatedRoute, Router y estados de modo (isEditMode).
+        /* 💉 */ Inyección: Uso exclusivo de inject() para servicios, tokens o datos.
+        /* 🔒 */ Constantes: Reservado estrictamente para constantes inmutables o de solo lectura.
+        /* 🚨 */ Navegación: IDs de ruta, ActivatedRoute, Router y estados de modo (isEditMode).
 
 2. Reactividad Moderna (Signals).
    
@@ -32,21 +32,21 @@ Cada propiedad o bloque debe llevar su emoji identificador. Se aplica alineació
           /* 🪃 */ Model: Comunicación bidireccional moderna (model).
 
 # 3. Comunicación y DOM:
-    /* ↘️ */ Input: Entrada de datos desde un componente padre (@Input).
-    /* ↗️ */ Output: Salida de eventos hacia componentes superiores (@Output).
-    /* 👀 */ ViewChild: Referencias a elementos del DOM o componentes hijos (@ViewChild).
-    /* 🏷️ */ Elemento: Referencias directas a ElementRef o nodos nativos.
+        /* ↘️ */ Input: Entrada de datos desde un componente padre (@Input).
+        /* ↗️ */ Output: Salida de eventos hacia componentes superiores (@Output).
+        /* 👀 */ ViewChild: Referencias a elementos del DOM o componentes hijos (@ViewChild).
+        /* 🏷️ */ Elemento: Referencias directas a ElementRef o nodos nativos.
 
 # 4. Arquitectura de Formularios:
-    /* 📝 */ Formulario: Declaración y estructura de la variable formGroup.
-    /* ✅ */ Validador: Reglas de validación dentro de los controles (Validators).
+        /* 📝 */ Formulario: Declaración y estructura de la variable formGroup.
+        /* ✅ */ Validador: Reglas de validación dentro de los controles (Validators).
 
 # 5. Flujos Asíncronos (RxJS):
-    /* 👁️ */ Observable: Flujos de datos asíncronos (Observable, Subject).
-    /* 📌 */ Suscripción: Anclas de Subscription que requieren limpieza manual.
+        /* 👁️ */ Observable: Flujos de datos asíncronos (Observable, Subject).
+        /* 📌 */ Suscripción: Anclas de Subscription que requieren limpieza manual.
 
 # 6. Estructura de Métodos:
-    /* 🚧 */ Constructor: Bloque inicial de construcción (zona de cimientos).
-    /* 🅰️ */ Angular Nativo: Hooks de ciclo de vida (ngOnInit, ngOnDestroy, etc.).
-    /* 🏛️ */ Método L10: Lógica de negocio, funciones privadas y procesos propios.
+        /* 🚧 */ Constructor: Bloque inicial de construcción (zona de cimientos).
+        /* 🅰️ */ Angular Nativo: Hooks de ciclo de vida (ngOnInit, ngOnDestroy, etc.).
+        /* 🏛️ */ Método L10: Lógica de negocio, funciones privadas y procesos propios.
 
