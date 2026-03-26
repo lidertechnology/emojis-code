@@ -52,7 +52,11 @@ Imports de Componente: Dentro del decorador @Component, la propiedad imports: [ 
         /* 📌 */ Suscripción: Anclas de Subscription que requieren limpieza manual.
 
 # 6. Estructura de Métodos:
-        /* 🚧 */ Constructor: Bloque inicial de construcción (zona de cimientos).
-        /* 🅰️ */ Angular Nativo: Hooks de ciclo de vida (ngOnInit, ngOnDestroy, etc.).
-        /* 🏛️ */ Método L10: Lógica de negocio, funciones privadas y procesos propios.
+          /* 🚧 */ Constructor: Bloque inicial de construcción (zona de cimientos).
+          /* 🅰️ */ Angular Nativo: Hooks de ciclo de vida (ngOnInit, ngOnDestroy, etc.).
+          /* 🔥 */ Firebase L10: Interacción con Firestore, Auth y servicios de Firebase.
+          /* 🐹 */ Integración Gopher: Métodos que conectan con Cloud Functions (Go).
+          /* 🏛️ */ Método L10: Lógica de negocio, funciones privadas y procesos propios.
+          /* 🚀 */ Procesos L10: Ejecución de estados (Signals) y disparadores de acción.
+          /* 🧹 */ Limpieza L10: Gestión de memoria y destrucción de recursos.
 
